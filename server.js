@@ -183,7 +183,7 @@ app.post("/vote", async (req, res) => {
     // Estimate gas for the transaction
     const estimatedGas = await contract.methods
       .vote(candidateId, voterAddress)
-      .estimateGas({ from: voterAddress });
+      .estimateGas({ from: senderAddress });
     console.log(`Estimated gas: ${estimatedGas}`);
 
     // Get the current gas price
