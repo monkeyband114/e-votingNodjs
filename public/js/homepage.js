@@ -72,7 +72,7 @@ async function vote(candidateId) {
         showAlert("Vote cast successfully!");
         window.location.reload();
       } else {
-        showAlert("Not Enough ETH for Transaction");
+        showAlert("User denied account access.Has Voted Before");
       }
     } catch (error) {
       showAlert("User denied account access.");
