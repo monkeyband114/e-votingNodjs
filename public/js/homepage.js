@@ -72,10 +72,12 @@ async function vote(candidateId) {
         showAlert("Vote cast successfully!");
         window.location.reload();
       } else {
-        showAlert("Not Enough ETH for Transaction");
+        showAlert("Error casting vote.");
       }
     } catch (error) {
       showAlert("User denied account access.");
+    } finally {
+      showAlert("Not Enough ETH for Transaction");
     }
   } else {
     showAlert("MetaMask is not installed. Please install it to vote.");
