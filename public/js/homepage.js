@@ -51,10 +51,10 @@ async function vote(candidateId) {
   if (typeof window.ethereum !== "undefined") {
     try {
       // Request account access if needed
-      accounts = await ethereum.request({
+      const account = await ethereum.request({
         method: "eth_requestAccounts",
       });
-      const selectedAccount = accounts[0]; // This will open Metamask for user to select account
+      const selectedAccount = account[0]; // This will open Metamask for user to select account
       localStorage.setItem("voterAddress", selectedAccount);
       const accounts = await ethereum.request({
         method: "eth_requestAccounts",
@@ -72,7 +72,7 @@ async function vote(candidateId) {
         showAlert("Vote cast successfully!");
         window.location.reload();
       } else {
-        showAlert("Error casting vote.");
+        showAlert("Not Enough ETH for Transaction");
       }
     } catch (error) {
       showAlert("User denied account access.");
