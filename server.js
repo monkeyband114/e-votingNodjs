@@ -137,7 +137,7 @@ const contractABI = [
   },
 ];
 
-const contractAddress = "0x22D7e11b3807FB361626de449CE21cc55C28223E";
+const contractAddress = "0x0aeadcb67b20f22024174921c296622276a4ae88";
 const infuraUrl =
   "https://sepolia.infura.io/v3/b38cf753021449a584d8a9ea94fce34c";
 
