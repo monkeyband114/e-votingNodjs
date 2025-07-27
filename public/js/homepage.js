@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Load candidates
   const response = await fetch("/candidates");
   const candidates = await response.json();
+  console.log(candidates);
   const accountAddressElement = document
     .getElementById("accountAddress")
     .querySelector("span");
@@ -60,7 +61,7 @@ async function vote(candidateId) {
         method: "eth_requestAccounts",
       });
       const voterAddress = accounts[0];
-
+      console.log(candidateId);
       // Send the vote to the server
       const response = await fetch("/vote", {
         method: "POST",

@@ -4,7 +4,7 @@ const { Web3 } = require("web3");
 require("dotenv").config();
 
 const app = express();
-const port = 3000;
+const port = 5000;
 const contractABI = [
   {
     inputs: [
@@ -137,7 +137,7 @@ const contractABI = [
   },
 ];
 
-const contractAddress = "0x22D7e11b3807FB361626de449CE21cc55C28223E";
+const contractAddress = "0xE52c1631f7b9723703364Dd391823465586a61E2";
 const infuraUrl =
   "https://sepolia.infura.io/v3/b38cf753021449a584d8a9ea94fce34c";
 
@@ -170,7 +170,7 @@ app.post("/vote", async (req, res) => {
 
   const { candidateId, voterAddress } = req.body;
 
-  if (!candidateId || !voterAddress) {
+  if (!voterAddress) {
     return res.status(400).send("Missing candidateId or voterAddress");
   }
 
